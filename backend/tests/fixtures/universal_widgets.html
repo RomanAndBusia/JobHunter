@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><body><form onsubmit="throw new Error('Submission forbidden')">
+<fieldset class="phone"><legend>Phone</legend><button type="button" id="country" onclick="document.querySelector('#countries').hidden=false">Country</button>
+<div id="countries" role="listbox" hidden><div role="option" data-dial-code="48" data-country-code="pl" onclick="document.querySelector('#country').textContent='Poland +48';this.parentElement.hidden=true">Poland +48</div></div>
+<input type="tel" id="phone" aria-label="Phone" oninput="document.querySelector('#canonical').value='+48'+this.value.replace(/\D/g,'')"><input id="canonical" type="hidden"></fieldset>
+<div class="form-group"><label id="motivation-label">Why this role?</label><div class="fr-box"><div id="editor" class="fr-element" contenteditable="true" aria-labelledby="motivation-label" oninput="document.querySelector('#letter').value=this.innerHTML"></div></div><textarea id="letter" hidden></textarea></div>
+<label for="languages">What languages do you know?</label><select id="languages" multiple style="display:none"><option value="en">English</option><option value="pl">Polish</option></select>
+<div class="selectize-control"><div class="selectize-input"><input id="lang-query" onclick="document.querySelector('.selectize-dropdown').hidden=false"></div><div class="selectize-dropdown" hidden><div class="option" data-value="en" onclick="document.querySelector('#languages').options[0].selected=true;this.parentElement.hidden=true">English</div><div class="option" data-value="pl" onclick="document.querySelector('#languages').options[1].selected=true;this.parentElement.hidden=true">Polish</div></div></div>
+<div class="grecaptcha-badge" style="width:256px;height:60px"><iframe src="about:blank?recaptcha&size=invisible"></iframe></div>
+<button type="submit">Send</button></form></body></html>

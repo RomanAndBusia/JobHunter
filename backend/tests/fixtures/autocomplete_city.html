@@ -1,0 +1,12 @@
+<!doctype html><html><body><form id="application">
+<label for="city">City</label><input id="city" role="combobox" aria-autocomplete="list" aria-controls="city-list" required>
+<div id="city-list" role="listbox" hidden>
+  <button type="button" role="option" data-value="Wrocław">Wrocław</button>
+  <button type="button" role="option" data-value="Wrocław, dolnośląskie">Wrocław, dolnośląskie</button>
+  <button type="button" role="option" data-value="Wrocław County">Wrocław County</button>
+</div>
+<script>
+const input=document.querySelector('#city'), list=document.querySelector('#city-list');
+input.addEventListener('focus',()=>list.hidden=false); input.addEventListener('input',()=>list.hidden=false);
+list.addEventListener('click',e=>{if(e.target.matches('[role=option]')){input.value=e.target.dataset.value;input.dataset.selected='true';list.hidden=true;}});
+</script></form></body></html>

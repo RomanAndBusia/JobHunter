@@ -1,0 +1,5 @@
+<!doctype html><html><body><form id="languages"><fieldset id="rows"><legend>Languages</legend>
+<div class="row"><label>Language <input name="language_0" required></label><label>Level <select name="level_0"><option>B1</option><option>B2</option><option>C1</option><option>Fluent</option></select></label></div>
+</fieldset><button type="button" id="add">Add language</button><script>
+let n=1;document.querySelector('#add').onclick=()=>{const row=document.querySelector('.row').cloneNode(true);row.querySelector('input').name='language_'+n;row.querySelector('select').name='level_'+n;n++;document.querySelector('#rows').append(row)};
+</script></form></body></html>
